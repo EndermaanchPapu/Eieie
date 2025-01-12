@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video en Pantalla Completa</title>
+</head>
+<body style="margin: 0; background-color: black;">
+    <video id="video" src="https://www.dropbox.com/scl/fi/uo2e8vlq49k0oee63onpp/video1.mp4?rlkey=qq909vs32giix20ug38tvtqme&raw=1" controls autoplay style="width: 100%; height: 100%;"></video>
+
+    <script>
+        // Al cargar la página, intenta reproducir el video
+        const video = document.getElementById('video');
+        video.addEventListener('click', () => {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) { // Para Safari
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { // Para IE/Edge
+                video.msRequestFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>
